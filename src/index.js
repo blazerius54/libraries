@@ -2,19 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { ConfigProvider } from 'antd';
 import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import ruRU from 'antd/lib/locale-provider/ru_RU';
 import App from './app';
+import { store } from './state/store';
 import * as serviceWorker from './serviceWorker';
 import 'antd/dist/antd.css';
 
-
 ReactDOM.render(
-  <ConfigProvider locale={ruRU}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </ConfigProvider>,
-  document.getElementById('root'),
+    <ConfigProvider locale={ruRU}>
+        <BrowserRouter>
+            <Provider store={store}>
+                <App />
+            </Provider>
+        </BrowserRouter>
+    </ConfigProvider>,
+    document.getElementById('root'),
 );
 
 // If you want your app to work offline and load faster, you can change

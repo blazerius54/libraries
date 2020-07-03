@@ -1,0 +1,8 @@
+.mainWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.layoutWrapper {
+    width: 600px;
+}
